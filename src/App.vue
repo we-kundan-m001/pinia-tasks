@@ -9,6 +9,7 @@
     <!--button-->
     <button @click="filtervalue = 'All'">Show All</button>
     <button @click="filtervalue = 'favs'">Show Favs</button>
+    <button @click="taskdetail.$reset">Resetstate</button>
 
     <!---Task form -->
     <TaskForm />
@@ -26,16 +27,23 @@
         <TaskDetail :task="task" />
       </div>
     </div>
+
+
   </main>
 </template>
 
 <script setup >
-import {ref } from 'vue';
+import {onMounted, ref } from 'vue';
 import  TaskDetail  from './components/TaskDetail.vue';
 import TaskForm from './components/TaskForm.vue';
 import { usetaskstore } from './store/TaskStore.js';
 
 const taskdetail= usetaskstore();
 
-const filtervalue=ref('');
+onMounted(()=>{
+  taskdetail.getData();
+})
+
+
+const filtervalue=ref('All');
 </script>

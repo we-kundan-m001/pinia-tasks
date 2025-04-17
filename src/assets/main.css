@@ -33,6 +33,7 @@ header h1 {
 
 .task-list {
   max-width: 640px;
+  min-height: 400px; 
   margin: 20px auto;
 
 }
@@ -48,7 +49,6 @@ header h1 {
   align-items: center;
 
 }
-
 .task h3, .task .icons{
   display: inline-block;
   color:#444;
@@ -58,8 +58,18 @@ header h1 {
  }
 
  .task i{
-  font-size: 1px;
+  /* font-size: 1px; */
   margin-left: 6px;
   cursor: pointer;
   color:#bbb;
  }
+ .icons .favtask{
+  color:red;
+
+ }
+
+ img {
+  width: 300px;
+  height: 100px;
+  object-fit: cover;
+}
